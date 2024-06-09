@@ -24,16 +24,16 @@ pip install spotipy
 pip install python-dotenv
 
 ```
-### Archivo .env
+## Archivo .env
 Asegúrate de crear un archivo **.env** en el directorio raíz del proyecto para almacenar tus variables de entorno.
-# .env example
+### .env example
 ```sh
 TOKEN=El_token_del_bot
 CLIENT_ID_SP=CLiente_id_de_spotify
 CLIENT_SECRECT=Cliente_secreto_spotify
 ```
 
-### Aviso
+## Aviso
 
 Este bot está diseñado para uso personal y sin fines de lucro. No se busca hacer negocio con este proyecto ni generar ingresos a partir de su uso.
 
