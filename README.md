@@ -26,7 +26,7 @@ pip install python-dotenv
 ```
 ## Archivo .env
 Asegúrate de crear un archivo **.env** en el directorio raíz del proyecto para almacenar tus variables de entorno.
-### .env example
+### Ejemplo del archivo .env 
 ```sh
 TOKEN=El_token_del_bot
 CLIENT_ID_SP=CLiente_id_de_spotify
