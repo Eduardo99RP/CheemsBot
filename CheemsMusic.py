@@ -92,9 +92,13 @@ async def skip(ctx, song_id: int = None):
     last_text_channels[ctx.guild.id] = ctx.channel  # Guardar el canal de texto
     voice_client = get(bot.voice_clients, guild=ctx.guild)
 
-    if ctx.guild.id in queues and len(queues[ctx.guild.id]) > 0 and song_id != None:
-        queues[ctx.guild.id].pop(song_id)
-
+    if ctx.guild.id in queues and len(queues[ctx.guild.id]) > 1 and song_id != None:
+        try:
+            queues[ctx.guild.id].pop(song_id)
+        except IndexError:
+            await ctx.reply("❌ No existe ese ID")
+            return
+            
     if voice_client and voice_client.is_playing():
         voice_client.stop()
         await ctx.reply("⏭️ Canción saltada.")
@@ -248,9 +252,8 @@ async def help(ctx):
     """
     await ctx.send(help_text)
 
+
 # comando para hacer pruebas de codigo, este codigo no es necesario que este el bot
-
-
 @bot.command()
 async def ping(ctx):
     await ctx.reply("pong")
@@ -262,5 +265,6 @@ async def on_command_error(ctx, error):
         await ctx.reply("❌ Ese comando no existe. Usa `!help` para ver la lista de comandos disponibles.")
     else:
         raise error
+
 
 bot.run(os.environ.get("TOKEN"))
