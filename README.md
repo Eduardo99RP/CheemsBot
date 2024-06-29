@@ -1,4 +1,4 @@
-# CheemsBot
+# CheemsMusic
 Este bot utiliza varias bibliotecas de Python. A continuación se detalla cómo instalarlas.
 
 ## Instalación
