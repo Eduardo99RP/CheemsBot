@@ -19,10 +19,21 @@ Ejecuta los siguientes comandos en tu terminal o línea de comandos:
 
 ```sh
 pip install discord.py
-pip install pytube
+pip install pytubefix
 pip install spotipy
 pip install python-dotenv
+pip install pynacl
+```
 
+También es necesario instalar la siguiente herramienta 
+
+Para instalar en Debian o ubuntu 
+```sh
+sudo apt install ffmpeg
+```
+Para instalar en ArchLinux
+```sh
+sudo pacman -S ffmpeg
 ```
 ## Archivo .env
 Asegúrate de crear un archivo **.env** en el directorio raíz del proyecto para almacenar tus variables de entorno.
