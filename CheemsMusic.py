@@ -261,31 +261,31 @@ async def q(ctx):
 
 @bot.command()
 async def remove(ctx, *, remove_num: str = None):
-    if ctx.author.voice:
-        if ctx.guild.id in queues and len(queues[ctx.guild.id]) > 0:
-            if remove_num:
-                try:
-                    # Convertir remove_num a entero y ajustar para que empiece desde 1
-                    index = int(remove_num) - 1
-                    if 0 <= index < len(queues[ctx.guild.id]):
-                        url = queues[ctx.guild.id][index]  # Corrección aquí
-                        yt = YouTube(url)
-                        title = yt.title
-                        del queues[ctx.guild.id][index]
+    if not ctx.author.voice:
+        return await ctx.reply("❌ Necesitas estar en el canal para usar ese comando ❌")
 
-                        await ctx.reply(f"La canción: **`{title}`** fue eliminada")
-                    else:
-                        await ctx.reply("No hay ninguna canción con ese numero prueba usar el comando **`!q`**.")
-                except ValueError:
-                    await ctx.reply("El número proporcionado no es válido.")
-                except Exception as e:
-                    await ctx.reply(f"Error al procesar la solicitud: {str(e)}")
-            else:
-                await ctx.reply("Debes proporcionar un número.")
+    if remove_num is None:
+        return await ctx.reply("Debes proporcionar un número.")
+
+    if ctx.guild.id not in queues or not queues[ctx.guild.id]:
+        return await ctx.reply("No hay elementos en la cola de reproducción.")
+
+    try:
+        index = int(remove_num) - 1
+        if 0 <= index < len(queues[ctx.guild.id]):
+            url = queues[ctx.guild.id][index]
+            yt = YouTube(url)
+            title = yt.title
+            del queues[ctx.guild.id][index]
+            await ctx.reply(f"La canción: **`{title}`** fue eliminada")
         else:
-            await ctx.reply("No hay elementos en la cola de reproducción.")
-    else:
-        await ctx.reply("❌ Necesitas estar en el canal para usar ese comando ❌")
+            await ctx.reply("No hay ninguna canción con ese número. Prueba usar el comando **`!q`**.")
+    except ValueError:
+        await ctx.reply("El número proporcionado no es válido.")
+    except Exception as e:
+        await ctx.reply(f"Error al procesar la solicitud: {str(e)}")
+
+
 
 
 @bot.command()
