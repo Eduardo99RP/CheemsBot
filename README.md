@@ -12,6 +12,7 @@ Asegúrate de tener `pip` instalado y configurado correctamente. Puedes usar los
 - **pytube**: Biblioteca para descargar videos de YouTube.
 - **spotipy**: Biblioteca para interactuar con la API de Spotify.
 - **python-dotenv**: Biblioteca para cargar variables de entorno desde un archivo `.env`.
+- **pynacl**: Proporciona herramientas para realizar operaciones criptográficas, como cifrado, firmas digitales, hashing y otras funciones relacionadas con la seguridad.
 
 ### Comandos de Instalación
 
@@ -25,16 +26,16 @@ pip install python-dotenv
 pip install pynacl
 ```
 
-También es necesario instalar la siguiente herramienta 
+También es necesario instalar la siguiente herramienta: 
 
-Para instalar en Debian o ubuntu 
-```sh
-sudo apt install ffmpeg
-```
-Para instalar en ArchLinux
-```sh
-sudo pacman -S ffmpeg
-```
+- Para instalar en Debian o ubuntu 
+  ```sh
+  sudo apt install ffmpeg
+  ```
+- Para instalar en ArchLinux
+  ```sh
+  sudo pacman -S ffmpeg
+  ```
 ## Archivo .env
 Asegúrate de crear un archivo **.env** en el directorio raíz del proyecto para almacenar tus variables de entorno.
 ### Ejemplo del archivo .env 
