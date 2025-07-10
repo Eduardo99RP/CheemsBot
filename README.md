@@ -1,29 +1,42 @@
 # CheemsMusic
 Este bot utiliza varias bibliotecas de Python. A continuación se detalla cómo instalarlas.
+## 🧪 Versiones disponibles
 
-## Instalación
+Este proyecto cuenta con dos versiones:
 
-Asegúrate de tener `pip` instalado y configurado correctamente. Puedes usar los siguientes comandos para instalar las dependencias necesarias:
+- Una basada en la librería `discord.py`
+- Otra basada en `nextcord`
 
-### Paquetes
+Actualmente, la versión con **`nextcord`** está más actualizada y es la recomendada, ya que `discord.py` puede presentar errores o problemas de compatibilidad debido a que no se encuentra tan mantenida activamente. Se espera que en el futuro estos problemas sean corregidos por sus desarrolladores.
+
+---
+
+
+### Versión de python recomendada
+- python 3.12.3
+
+## 📦 Paquetes
 
 - **asyncio**: Esta biblioteca está incluida en la biblioteca estándar de Python (Python 3.4 o superior).
-- **discord.py**: Biblioteca para interactuar con la API de Discord.
+- **discord.py o nextcord**: Biblioteca para interactuar con la API de Discord.
 - **pytube**: Biblioteca para descargar videos de YouTube.
 - **spotipy**: Biblioteca para interactuar con la API de Spotify.
 - **python-dotenv**: Biblioteca para cargar variables de entorno desde un archivo `.env`.
 - **pynacl**: Proporciona herramientas para realizar operaciones criptográficas, como cifrado, firmas digitales, hashing y otras funciones relacionadas con la seguridad.
 
-### Comandos de Instalación
+## ⚙️ Instalación
 
-Ejecuta los siguientes comandos en tu terminal o línea de comandos:
+Clona este repositorio:
 
+```bash
+git clone https://github.com/tu_usuario/cheemsbot.git
+cd cheemsbot
+```
+Asegúrate de tener `pip` instalado y configurado correctamente.
+
+Instala las dependencias:
 ```sh
-pip install discord.py
-pip install pytubefix
-pip install spotipy
-pip install python-dotenv
-pip install pynacl
+pip install -r requirements.txt
 ```
 
 También es necesario instalar la siguiente herramienta: 

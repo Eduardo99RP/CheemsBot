@@ -1,0 +1,5 @@
+nextcord
+pytubefix
+spotipy
+python-dotenv
+pynacl
